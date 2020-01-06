@@ -1,0 +1,12 @@
+<p>
+  home works!
+
+  <button (click)="load()">Click me!</button>
+
+</p>
+
+<nav>
+  <ul class = "taskList">
+    <li *ngFor = "let item of feedService.tweetList">{{item.time}}, {{item.user}}, {{item.text}}</li>
+  </ul>
+</nav>
