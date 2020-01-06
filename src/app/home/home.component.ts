@@ -8,7 +8,7 @@ import { FeedService} from '../feed.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private feedService: FeedService) { }
+  constructor(public feedService: FeedService) { }
 
   ngOnInit() {
   }
