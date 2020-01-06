@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
 import { HomeComponent } from './home/home.component';
+import { Tweet } from './model/tweet';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [FeedService],
   bootstrap: [AppComponent]
