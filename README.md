@@ -1,4 +1,10 @@
-# MytweetstatsAng
+# Mytweetstats
+
+# To re-deloy
+
+ng build prod -base-href "tweet frontend"
+
+ngh
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
