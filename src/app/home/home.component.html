@@ -7,6 +7,14 @@
 
 <nav>
   <ul class = "taskList">
-    <li *ngFor = "let item of feedService.tweetList">{{item.time}}, {{item.user}}, {{item.text}}</li>
+    <li style="padding: 9px 12px; border-bottom: 1px solid #e6ecf0;" *ngFor = "let item of feedService.tweetList">
+      <div [innerHTML]="item.time">
+      </div>
+      <div [innerHTML]="item.userLink">
+      </div>
+      <div [innerHTML]="item.textLink">
+      </div>
+    </li>
+    <hr>
   </ul>
 </nav>
