@@ -6,4 +6,5 @@ export interface Tweet {
   userImage: string;
   text: string;
   textLink: string;
+  image: string;
 }

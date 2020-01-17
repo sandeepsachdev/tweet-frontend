@@ -13,6 +13,8 @@ Total Items = {{ feedService.tweetList.length}}
       <button (click)="filterOut(item.screenName)">Filter me</button>
       <div [innerHTML]="item.textLink">
       </div>
+
+      <img  *ngIf="item.image" style="width: 200px; height: 200px" src="{{item.image}}?format=jpg&name=small"/>
     </li>
     <hr>
   </ul>
