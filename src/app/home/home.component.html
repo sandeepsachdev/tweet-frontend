@@ -1,21 +1,19 @@
 
-<p>
-Total Items = {{ feedService.tweetList.length}}
-</p>
+<div class="row border-bottom " *ngFor="let item of feedService.tweetList">
+  <div class="row">
+        <div class="col-xs-3" [innerHTML]="item.time"></div>
+        <div class="col-xs-6" [innerHTML]="item.userLink"></div>
+        <div class="col-xs-3">
+          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Filter me</button>
+        </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12" [innerHTML]="item.textLink"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <img class=" img-responsive" *ngIf="item.image" style="max-height: 200px" src="{{item.image}}?format=jpg&name=small"/>
+    </div>
+  </div>
+</div>
 
-<nav>
-  <ul class = "taskList">
-    <li style="padding: 9px 12px; border-bottom: 1px solid #e6ecf0;" *ngFor = "let item of feedService.tweetList">
-      <div [innerHTML]="item.time">
-      </div>
-      <div [innerHTML]="item.userLink">
-      </div>
-      <button (click)="filterOut(item.screenName)">Filter me</button>
-      <div [innerHTML]="item.textLink">
-      </div>
-
-      <img  *ngIf="item.image" style="width: 200px; height: 200px" src="{{item.image}}?format=jpg&name=small"/>
-    </li>
-    <hr>
-  </ul>
-</nav>
