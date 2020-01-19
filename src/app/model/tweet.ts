@@ -10,4 +10,5 @@ export interface Tweet {
   quotedBy : string;
   quotedText: string;
   retweetedBy: string;
+  profileImage: string;
 }
