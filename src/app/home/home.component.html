@@ -10,21 +10,20 @@
 
     <div class="col-10">
       <div class="row">
-        <div class="col" [innerHTML]="item.time"></div>
+        <div class="col-9" [innerHTML]="item.time"></div>
+        <div class="col-3">
+          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Mute</button>
+        </div>
       </div>
 
       <div class="row" *ngIf="item.retweetedBy">
-        <div class="col-9" style="font-style: italic; font-size: 70%;" [innerHTML]="item.retweetedBy"></div>
-        <div class="col-3">
-          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Mute</button>
-        </div>
+        <div class="col" style="font-style: italic; font-size: 70%;" [innerHTML]="item.retweetedBy"></div>
+
       </div>
 
       <div class="row" *ngIf="item.quotedBy">
-        <div class="col-9" style="font-style: italic; font-size: 70%;" [innerHTML]="item.quotedBy"></div>
-        <div class="col-3">
-          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Mute</button>
-        </div>
+        <div class="col" style="font-style: italic; font-size: 70%;" [innerHTML]="item.quotedBy"></div>
+
       </div>
 
       <div class="row mb-2" *ngIf="item.quotedText">
@@ -32,10 +31,7 @@
       </div>
 
       <div class="row">
-        <div class="col-9" [innerHTML]="item.userLink"></div>
-        <div class="col-3" *ngIf="!item.retweetedBy && !item.quotedBy">
-          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Mute</button>
-        </div>
+        <div class="col" [innerHTML]="item.userLink"></div>
       </div>
 
       <div class="row mb-2">
