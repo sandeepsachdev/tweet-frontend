@@ -7,4 +7,7 @@ export interface Tweet {
   text: string;
   textLink: string;
   image: string;
+  quotedBy : string;
+  quotedText: string;
+  retweetedBy: string;
 }
