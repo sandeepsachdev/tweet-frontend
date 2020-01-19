@@ -1,5 +1,10 @@
-<div *ngFor="let item of feedService.tweetList">
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary " (click)="resetFilter()">Reset Filter</button>
+  </div>
+</div>
 
+<div *ngFor="let item of feedService.tweetList">
 
   <div class="row">
 
@@ -44,8 +49,6 @@
                src="{{item.image}}?format=jpg&name=small"/>
         </div>
       </div>
-
-
     </div>
 
 

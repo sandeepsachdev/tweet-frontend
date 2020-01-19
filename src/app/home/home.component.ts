@@ -24,5 +24,19 @@ export class HomeComponent implements OnInit {
 
   filterOut(userToFilter: string) {
     this.feedService.filterOut(userToFilter);
+
+    let filteredUsers: string[] = [];
+    if (localStorage.getItem('filteredUsers')) {
+      filteredUsers = JSON.parse(localStorage.getItem('filteredUsers'));
+      filteredUsers.push(userToFilter);
+    } else {
+      filteredUsers.push(userToFilter);
+    }
+
+    localStorage.setItem('filteredUsers', JSON.stringify(filteredUsers));
+  }
+
+  resetFilter() {
+    localStorage.removeItem('filteredUsers');
   }
 }

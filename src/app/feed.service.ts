@@ -13,15 +13,16 @@ export class FeedService {
     this.http.get<Tweet[]>('https://tweetbackend.herokuapp.com/getTweets'
     ).subscribe((res) => {
       console.log(res);
-
-      for (let i = 0; ; i++) {
-        if (res[i] == null) {
-          break;
+        let filteredUsers: string[] = [];
+        if (localStorage.getItem('filteredUsers')) {
+          filteredUsers = JSON.parse(localStorage.getItem('filteredUsers'));
         }
-        console.log('adding task' + res[i]);
 
-        this.tweetList = res;
-      }
+        for (const tweet of res) {
+          if (!filteredUsers.includes(tweet.screenName)) {
+            this.tweetList.push(tweet);
+          }
+        }
       console.log(this.tweetList);
     });
   }
