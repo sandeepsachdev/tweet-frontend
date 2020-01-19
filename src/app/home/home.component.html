@@ -1,19 +1,22 @@
+<div *ngFor="let item of feedService.tweetList">
 
-<div class="row border-bottom " *ngFor="let item of feedService.tweetList">
-  <div class="row">
-        <div class="col-xs-3" [innerHTML]="item.time"></div>
-        <div class="col-xs-6" [innerHTML]="item.userLink"></div>
-        <div class="col-xs-3">
-          <button class="btn btn-primary " (click)="filterOut(item.screenName)">Filter me</button>
-        </div>
+    <div class="row">
+      <div class="col-sm" [innerHTML]="item.time"></div>
+      <div class="col-sm" [innerHTML]="item.userLink"></div>
+      <div class="col-sm">
+        <button class="btn btn-primary " (click)="filterOut(item.screenName)">Filter me</button>
+      </div>
+    </div>
+
+   <div class="row">
+     <div class="col-sm" [innerHTML]="item.textLink"></div>
   </div>
-  <div class="row">
-      <div class="col-xs-12" [innerHTML]="item.textLink"></div>
+
+   <div class="row border-bottom">
+    <div class="col-sm float-right">
+      <img class=" img-responsive" *ngIf="item.image" style="max-height: 200px"
+           src="{{item.image}}?format=jpg&name=small"/>
+    </div>
   </div>
-<!--  <div class="row">-->
-<!--    <div class="col-xs-12">-->
-<!--      <img class=" img-responsive" *ngIf="item.image" style="max-height: 200px" src="{{item.image}}?format=jpg&name=small"/>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
 
