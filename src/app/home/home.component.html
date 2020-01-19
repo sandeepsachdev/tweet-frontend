@@ -1,19 +1,19 @@
 <div *ngFor="let item of feedService.tweetList">
 
     <div class="row">
-      <div class="col-sm" [innerHTML]="item.time"></div>
-      <div class="col-sm" [innerHTML]="item.userLink"></div>
-      <div class="col-sm">
-        <button class="btn btn-primary " (click)="filterOut(item.screenName)">Filter me</button>
+      <div class="col-2" [innerHTML]="item.time"></div>
+      <div class="col-7" [innerHTML]="item.userLink"></div>
+      <div class="col-3">
+        <button class="btn btn-primary " (click)="filterOut(item.screenName)">Mute</button>
       </div>
     </div>
 
    <div class="row">
-     <div class="col-sm" [innerHTML]="item.textLink"></div>
+     <div class="col" [innerHTML]="item.textLink"></div>
   </div>
 
    <div class="row border-bottom">
-    <div class="col-sm float-right">
+    <div class="col float-right">
       <img class=" img-responsive" *ngIf="item.image" style="max-height: 200px; max-width: 320px"
            src="{{item.image}}?format=jpg&name=small"/>
     </div>
