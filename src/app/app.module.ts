@@ -4,12 +4,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
 import { HomeComponent } from './home/home.component';
+import { MutedUsers } from './mutedUsers/mutedUsers.component';
 import { Tweet } from './model/tweet';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MutedUsers
   ],
   imports: [
     BrowserModule,
