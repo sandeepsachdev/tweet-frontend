@@ -7,8 +7,13 @@ import {Tweet} from '../model/tweet';
   styleUrls: ['./mutedUsers.component.css']
 })
 export class MutedUsers implements OnInit {
-  tweets: Tweet[];
+  filteredUsers: String[];
 
   ngOnInit() {
+
+    if (localStorage.getItem('filteredUsers')) {
+      this.filteredUsers = JSON.parse(localStorage.getItem('filteredUsers'));
+    }
   }
+
 }

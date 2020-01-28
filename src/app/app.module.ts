@@ -6,6 +6,7 @@ import { FeedService } from './feed.service';
 import { HomeComponent } from './home/home.component';
 import { MutedUsers } from './mutedUsers/mutedUsers.component';
 import { Tweet } from './model/tweet';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Tweet } from './model/tweet';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [FeedService],
   bootstrap: [AppComponent]
