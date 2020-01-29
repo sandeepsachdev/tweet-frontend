@@ -10,7 +10,7 @@ export class FeedService {
   tweetList: Tweet[] = [];
   constructor(private http: HttpClient) {this.load();}
   load() {
-    this.http.get<Tweet[]>('http://localhost:5000/getTweets'
+    this.http.get<Tweet[]>('https://tweetbackend.herokuapp.com/getTweets'
     ).subscribe((res) => {
       console.log(res);
         let filteredUsers: string[] = [];
