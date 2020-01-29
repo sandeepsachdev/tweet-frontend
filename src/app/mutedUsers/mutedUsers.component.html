@@ -1,6 +1,11 @@
 <div>THE MUTED USERS COMPONENT
 </div>
 
-<div *ngFor="let user of filteredUsers">
-  Username: {{user}}
+<div class="col-12">
+  <div class="row" *ngFor="let user of filteredUsers">
+    <div class="col-9"> {{user}} </div>
+    <div class="col-3">
+      <button class="btn btn-primary " (click)="removeMute(user)">X</button>
+    </div>
+  </div>
 </div>

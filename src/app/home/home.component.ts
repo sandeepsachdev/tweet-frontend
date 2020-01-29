@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.feedService.update();
   }
 
   load() {
@@ -23,7 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   filterOut(userToFilter: string) {
-    this.feedService.filterOut(userToFilter);
 
     let filteredUsers: string[] = [];
     if (localStorage.getItem('filteredUsers')) {
@@ -34,7 +34,9 @@ export class HomeComponent implements OnInit {
     }
 
     localStorage.setItem('filteredUsers', JSON.stringify(filteredUsers));
+    this.feedService.filterOut(userToFilter);
   }
+
 
   resetFilter() {
     localStorage.removeItem('filteredUsers');
