@@ -1,6 +1,6 @@
-<div class="row" style="padding-bottom: 10px">
+<div class="row" style="padding-top: 30px ; padding-bottom: 10px">
   <div class="col">
-    <button class="btn btn-primary " (click)="resetFilter()">Reset Filter</button>
+    <button class="btn btn-primary " (click)="resetFilter()">Unmute all</button>
   </div>
 </div>
 
@@ -22,12 +22,12 @@
       </div>
 
       <div class="row" *ngIf="item.retweetedBy">
-        <div class="col" style="font-style: italic; font-size: 70%;" [innerHTML]="item.retweetedBy"></div>
+        <div class="col" style="font-style: italic; font-size: 90%;" [innerHTML]="item.retweetedBy"></div>
 
       </div>
 
       <div class="row" *ngIf="item.quotedBy">
-        <div class="col" style="font-style: italic; font-size: 70%;" [innerHTML]="item.quotedBy"></div>
+        <div class="col" style="font-style: italic; font-size: 90%;" [innerHTML]="item.quotedBy"></div>
 
       </div>
 
