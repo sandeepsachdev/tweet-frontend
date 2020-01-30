@@ -40,5 +40,6 @@ export class HomeComponent implements OnInit {
 
   resetFilter() {
     localStorage.removeItem('filteredUsers');
+    this.feedService.update();
   }
 }
