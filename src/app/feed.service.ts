@@ -15,7 +15,8 @@ export class FeedService {
   }
 
   load() {
-    this.http.get<Tweet[]>('https://tweetbackend.herokuapp.com/getTweets'
+  this.http.get<Tweet[]>('https://tweetbackend.herokuapp.com/getTweets'
+    // this.http.get<Tweet[]>('http://localhost:5000/getTweets'
     ).subscribe((res) => {
 
       this.rawList = res;
