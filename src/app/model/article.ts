@@ -1,4 +1,5 @@
 export interface Article {
+  source : Source
   title: string;
   description: string;
   url: string;
@@ -7,3 +8,7 @@ export interface Article {
   content: string;
 }
 
+export interface Source {
+    id : string,
+    name: string
+}

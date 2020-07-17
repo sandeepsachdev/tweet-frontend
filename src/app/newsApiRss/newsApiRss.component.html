@@ -1,6 +1,7 @@
 <div class="col-12" >
   <div  style="padding-bottom: 10px" class="row" *ngFor="let article of articles">
-    <div class="col-4">{{article.publishedAt}} </div>
+    <div class="col-2">{{article.publishedAt}} </div>
+    <div class="col-2">{{article.source.name}} </div>
     <div class="col-8">  <a target="_blank" [title]="article.description" [href]="article.url">{{article.title}}</a> </div>
   </div>
 </div>
