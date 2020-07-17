@@ -16,7 +16,7 @@ export class Rss implements OnInit {
   ngOnInit() {
     this.rssService.load().subscribe((results) => {
       this.items = results;
-      console.log('ngOnInit rss' + results);
+      console.log('ngOnInit rss' + this.items);
     })
   }
 
