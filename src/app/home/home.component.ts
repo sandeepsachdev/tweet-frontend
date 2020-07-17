@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FeedService} from '../feed.service';
+import {Component, OnInit} from '@angular/core';
+import {FeedService} from '../feed.service';
 import {Tweet} from '../model/tweet';
-import {RssService} from "../rss.service";
 
 @Component({
   selector: 'app-home',
