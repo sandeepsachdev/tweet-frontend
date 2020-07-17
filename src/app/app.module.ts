@@ -4,9 +4,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
 import { RssService } from './rss.service';
+import { NewsApiRssService } from './newsApiRss.service';
 import { HomeComponent } from './home/home.component';
 import { MutedUsers } from './mutedUsers/mutedUsers.component';
 import { Rss } from './rss/rss.component';
+import { NewsApiRss } from './newsApiRss/newsApiRss.component';
 import { Tweet } from './model/tweet';
 import { Item } from './model/item';
 import {AppRoutingModule} from "./app-routing.module";
@@ -18,6 +20,7 @@ import { SafePipe } from './safe.pipe';
     HomeComponent,
     MutedUsers,
     Rss,
+    NewsApiRss,
     SafePipe
   ],
   imports: [
@@ -25,7 +28,7 @@ import { SafePipe } from './safe.pipe';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [FeedService, RssService],
+  providers: [FeedService, RssService, NewsApiRssService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
