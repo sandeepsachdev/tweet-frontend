@@ -12,7 +12,8 @@ export class RssService {
   constructor(private http: HttpClient) {}
 
   load() : Observable<Item[]> {
-    return this.http.get<Item[]>('https://tweetbackend.herokuapp.com/getSmhRss'
+    //return this.http.get<Item[]>('https://tweetbackend.herokuapp.com/getSmhRss'
+    return this.http.get<Item[]>('http://localhost:5000/getSmhRss'
     ).pipe(
       catchError(this.handleError)
     );

@@ -14,8 +14,8 @@ export class NewsApiRssService {
   }
 
   load() : Observable<Article[]> {
-    return this.http.get<Article[]>('https://tweetbackend.herokuapp.com/getNewsApiRss'
-    //this.http.get<Item[]>('http://localhost:5000/getNewsApiRss'
+    //return this.http.get<Article[]>('https://tweetbackend.herokuapp.com/getNewsApiRss'
+    return this.http.get<Article[]>('http://localhost:5000/getNewsApiRss'
     ).pipe(
       catchError(this.handleError)
     );
