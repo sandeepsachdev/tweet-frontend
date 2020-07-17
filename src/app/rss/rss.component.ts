@@ -11,14 +11,13 @@ export class Rss implements OnInit {
   items: Item[];
 
   constructor(public rssService: RssService) {
-    this.items = rssService.itemList;
-    console.log('after load rss' + this.items.length);
   }
 
   ngOnInit() {
-    this.rssService.load();
-    console.log('ngOnInit rss' + this.items.length);
+    this.rssService.load().subscribe((results) => {
+      this.items = results;
+      console.log('ngOnInit rss' + results);
+    })
   }
-
 
 }

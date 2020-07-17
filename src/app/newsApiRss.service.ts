@@ -1,27 +1,35 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Article} from './model/article';
+import {catchError} from "rxjs/operators";
+import {Observable, throwError} from "rxjs";
+import {Item} from "./model/item";
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsApiRssService {
 
-  articleList: Article[] = [];
-
   constructor(private http: HttpClient) {
-    this.load();
   }
 
-  load() {
-    this.http.get<Article[]>('https://tweetbackend.herokuapp.com/getNewsApiRss'
+  load() : Observable<Article[]> {
+    return this.http.get<Article[]>('https://tweetbackend.herokuapp.com/getNewsApiRss'
     //this.http.get<Item[]>('http://localhost:5000/getNewsApiRss'
-    ).subscribe((res) => {
-
-      this.articleList = res;
-      console.log(this.articleList);
-    });
+    ).pipe(
+      catchError(this.handleError)
+    );
   }
 
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.log(error.error.message)
+
+    } else {
+      console.log(error.status)
+    }
+    return throwError(
+      console.log('Something is wrong!'));
+  };
 }
 

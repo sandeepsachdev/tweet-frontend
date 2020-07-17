@@ -12,14 +12,12 @@ export class NewsApiRss implements OnInit {
   articles: Article[];
 
   constructor(public newsApiRssService: NewsApiRssService) {
-    this.articles = newsApiRssService.articleList;
-    console.log('after load newsApiRss' + this.articles.length);
   }
 
   ngOnInit() {
-    this.newsApiRssService.load();
-    console.log('ngOnInit newsApiRss' + this.articles.length);
+    this.newsApiRssService.load().subscribe( (results) => {
+      this.articles = results;
+      console.log('ngOnInit newsApiRss' + this.articles.length);
+    })
   }
-
-
 }
