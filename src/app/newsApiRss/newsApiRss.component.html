@@ -4,6 +4,10 @@
     <div class="col-10">{{article.source.name}} </div>
     <div class="col-12">  <a target="_blank" [title]="article.description" [href]="article.url">{{article.title}}</a> </div>
     <div class="col-12">{{article.content}} </div>
-
+    <div>
+      <div class="col float-right">
+        <img class=" img-responsive" *ngIf="article.urlToImage" style="max-height: 200px; max-width: 320px"
+             src="{{article.urlToImage}}"/>
+      </div>
   </div>
 </div>
