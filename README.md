@@ -2,7 +2,7 @@
 
 # To re-deloy
 
-ng build --prod --base-href "/tweet-frontend/
+ng build --prod --base-href "/tweet-frontend/"
 
 ngh
 
