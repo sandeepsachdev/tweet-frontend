@@ -5,4 +5,6 @@ export interface Trend {
   count: string;
   name: string;
   url: string;
+  tweetText: string;
+  tweetText2: string;
 }
