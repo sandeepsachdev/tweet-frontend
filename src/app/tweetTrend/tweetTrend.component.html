@@ -1,12 +1,18 @@
 <div class="col-12" >
-  <div  style="padding-bottom: 10px" class="row border-bottom mb-2 pb-2" *ngFor="let trend of trends">
+
+  <div class="row" style="padding-bottom: 10px">
+    <button class="btn btn-primary " (click)="showTweets()">Show Tweets</button>
+  </div>
+  <div  style="padding-bottom: 10px" class="row border-bottom mb-2 pb-2" *ngFor="let trend of trends; index as i">
     <div class="col-3">{{trend.timeFirstSeen}} </div>
     <div class="col-9">  <a target="_blank" [title]="trend.name" [href]="trend.url">{{trend.name}}</a> </div>
-    <div class="row">
-      <div  class="col" style="padding-top: 5px; font-style: italic; font-size: 90%;" [innerHTML]="trend.tweetText"></div>
-    </div>
-    <div class="row">
-      <div class="col" style="padding-top: 5px; font-style: italic; font-size: 90%;" [innerHTML]="trend.tweetText2"></div>
-    </div>
+     <div *ngIf="isShowTweet">
+        <div class="row">
+          <div  class="col" style="padding-top: 5px; font-style: italic; font-size: 90%;" [innerHTML]="trend.tweetText"></div>
+        </div>
+        <div class="row">
+          <div class="col" style="padding-top: 5px; font-style: italic; font-size: 90%;" [innerHTML]="trend.tweetText2"></div>
+        </div>
+     </div>
   </div>
 </div>

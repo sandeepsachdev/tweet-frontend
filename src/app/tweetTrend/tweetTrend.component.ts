@@ -20,4 +20,10 @@ export class TweetTrend implements OnInit {
     })
   }
 
+  isShowTweet: boolean = false ; // hidden by default
+
+  showTweets() {
+    this.isShowTweet = ! this.isShowTweet;
+  }
+
 }
